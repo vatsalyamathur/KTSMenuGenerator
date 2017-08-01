@@ -1,6 +1,7 @@
 package com.darthvatslabs.ktsmenugenerator;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -40,9 +41,6 @@ public class DinnerMenuDisplay extends AppCompatActivity {
         m_headlineText = new TextView(this);
 
         // get EditText data from Intent
-        /*m_dinnerDisplayIntent = new Intent();
-        m_dinnerDisplayIntent = getIntent();*/
-
         Bundle dinnerDisplayBundle = getIntent().getExtras();
 
         m_currentDayString = new SimpleDateFormat("EEEE");
@@ -61,9 +59,9 @@ public class DinnerMenuDisplay extends AppCompatActivity {
         m_currentDateTimeString = new Date();
         m_dayOfTheWeek = m_currentDayString.format(m_currentDateTimeString);
 
-        m_headlineText.setText(
-                "Day " + m_dayOfTheWeek + "Pulse : " + m_pulseDish + "Paneer : " + m_paneerDish + "Veg : " + m_vegDish +
-                        "Paneer Price : " + String.valueOf(m_paneerMealPrice) + "Veg Price : " + String.valueOf(m_vegMealPrice));
+        Resources res = getResources();
+        m_headlineText.setText(res.getString(R.string.dinnerMenuHeadline, m_dayOfTheWeek) + '\n' + res.getString(R.string.dinnerMenuLine, m_pulseDish, m_paneerDish, m_paneerMealPrice)
+                + '\n' + res.getString(R.string.dinnerMenuLine, m_pulseDish,m_vegDish, m_vegMealPrice) + '\n' + res.getString(R.string.dinnerMenuEnd));
 
         m_dinnerDisplayLayout.addView(m_headlineText);
     }
