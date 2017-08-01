@@ -139,11 +139,13 @@ public class DinnerMenuInput extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent dinnerInputIntent = new Intent(getApplicationContext(), DinnerMenuDisplay.class);
-                dinnerInputIntent.putExtra("pulseDish", m_pulseDishInput.getText().toString());
-                dinnerInputIntent.putExtra("paneerDish", m_paneerDishInput.getText().toString());
-                dinnerInputIntent.putExtra("vegDish", m_vegDishInput.getText().toString());
-                dinnerInputIntent.putExtra("paneerMealPrice", m_paneerMealPriceInput.getText().toString());
-                dinnerInputIntent.putExtra("vegMealPrice", m_vegMealPriceInput.getText().toString());
+                Bundle dinnerInputBundle = new Bundle();
+                dinnerInputBundle.putString("pulseDish", m_pulseDishInput.getText().toString());
+                dinnerInputBundle.putString("paneerDish", m_paneerDishInput.getText().toString());
+                dinnerInputBundle.putString("vegDish", m_vegDishInput.getText().toString());
+                dinnerInputBundle.putInt("paneerMealPrice", Integer.parseInt(m_paneerMealPriceInput.getText().toString()));
+                dinnerInputBundle.putInt("vegMealPrice", Integer.parseInt(m_vegMealPriceInput.getText().toString()));
+                dinnerInputIntent.putExtras(dinnerInputBundle);
                 startActivity(dinnerInputIntent);
             }
         });

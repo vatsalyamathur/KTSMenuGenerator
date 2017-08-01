@@ -40,29 +40,31 @@ public class DinnerMenuDisplay extends AppCompatActivity {
         m_headlineText = new TextView(this);
 
         // get EditText data from Intent
-        m_dinnerDisplayIntent = new Intent();
-        m_dinnerDisplayIntent = getIntent();
+        /*m_dinnerDisplayIntent = new Intent();
+        m_dinnerDisplayIntent = getIntent();*/
+
+        Bundle dinnerDisplayBundle = getIntent().getExtras();
 
         m_currentDayString = new SimpleDateFormat("EEEE");
 
         m_dinnerDisplayLayout.setLayoutParams(
                 new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.MATCH_PARENT));
 
-        m_pulseDish = m_dinnerDisplayIntent.getStringExtra("pulseDish");
-        m_paneerDish = m_dinnerDisplayIntent.getStringExtra("paneerDish");
-        m_vegDish = m_dinnerDisplayIntent.getStringExtra("vegDish");
+        m_pulseDish = dinnerDisplayBundle.getString("pulseDish");
+        m_paneerDish = dinnerDisplayBundle.getString("paneerDish");
+        m_vegDish = dinnerDisplayBundle.getString("vegDish");
 
-        m_paneerMealPrice = m_dinnerDisplayIntent.getIntExtra("paneerMealPrice", 0);
-        m_vegMealPrice = m_dinnerDisplayIntent.getIntExtra("vegMealPrice", 0);
+        m_paneerMealPrice = dinnerDisplayBundle.getInt("paneerMealPrice", 0);
+        m_vegMealPrice = dinnerDisplayBundle.getInt("vegMealPrice", 0);
 
 
         m_currentDateTimeString = new Date();
         m_dayOfTheWeek = m_currentDayString.format(m_currentDateTimeString);
 
         m_headlineText.setText(
-                m_dayOfTheWeek + m_pulseDish + m_paneerDish + m_vegDish +
-                        String.valueOf(m_paneerMealPrice) + String.valueOf(m_vegMealPrice));
-//acavcaac
+                "Day " + m_dayOfTheWeek + "Pulse : " + m_pulseDish + "Paneer : " + m_paneerDish + "Veg : " + m_vegDish +
+                        "Paneer Price : " + String.valueOf(m_paneerMealPrice) + "Veg Price : " + String.valueOf(m_vegMealPrice));
+
         m_dinnerDisplayLayout.addView(m_headlineText);
     }
 
