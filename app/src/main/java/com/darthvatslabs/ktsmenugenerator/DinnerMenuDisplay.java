@@ -62,7 +62,7 @@ public class DinnerMenuDisplay extends AppCompatActivity {
         m_headlineText.setText(
                 m_dayOfTheWeek + m_pulseDish + m_paneerDish + m_vegDish +
                         String.valueOf(m_paneerMealPrice) + String.valueOf(m_vegMealPrice));
-
+//acavcaac
         m_dinnerDisplayLayout.addView(m_headlineText);
     }
 
