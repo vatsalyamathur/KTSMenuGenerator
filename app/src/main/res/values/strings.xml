@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">KTS MenuGenerator</string>
+    <string name="headline">KTS Menu Generator</string>
+    <string name="dinnerButton">Dinner Menu</string>
+    <string name="breakfastButton">Breakfast Menu</string>
+    <string name="headlineInput">Please Input Below Details</string>
+    <string name="pulseEditText">Enter Pulse/Dal Dish Name</string>
+    <string name="paneerEditText">Enter Paneer Dish Name</string>
+    <string name="vegEditText">Enter Vegetable Dish Name</string>
+    <string name="paneerMealPriceEditText">Enter Paneer Meal Price</string>
+    <string name="vegMealPriceEditText">Enter Veg Meal Price</string>
+    <string name="submitButton">Generate Menu</string>
+</resources>

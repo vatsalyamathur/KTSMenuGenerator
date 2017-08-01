@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="headlineText"></item>
+    <item type="id" name="dinnerMealButton"></item>
+    <item type="id" name="breakfastMealButton"></item>
+    <item type="id" name="pulseEditText"></item>
+    <item type="id" name="paneerEditText"></item>
+    <item type="id" name="vegEditText"></item>
+    <item type="id" name="paneerMealPriceEditText"></item>
+    <item type="id" name="vegMealPriceEditText"></item>
+    <item type="id" name="submitButton"></item>
+</resources>
