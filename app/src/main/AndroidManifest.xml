@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".DinnerMenuInput" />
         <activity android:name=".BreakfastMenuInput" />
-        <activity android:name=".DinnerMenuDisplay"></activity>
+        <activity android:name=".DinnerMenuDisplay" />
+        <activity android:name=".BreakfastMenuDisplay"></activity>
     </application>
 
 </manifest>

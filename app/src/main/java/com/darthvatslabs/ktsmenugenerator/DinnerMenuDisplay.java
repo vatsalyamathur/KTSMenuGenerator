@@ -60,7 +60,8 @@ public class DinnerMenuDisplay extends AppCompatActivity {
         m_dayOfTheWeek = m_currentDayString.format(m_currentDateTimeString);
 
         Resources res = getResources();
-        m_headlineText.setText(res.getString(R.string.dinnerMenuHeadline, m_dayOfTheWeek) + '\n' + res.getString(R.string.dinnerMenuLine, m_pulseDish, m_paneerDish, m_paneerMealPrice)
+        m_headlineText.setText(res.getString(R.string.dinnerMenuHeadline, m_dayOfTheWeek, res.getString(R.string.dinner)) + '\n'
+                + res.getString(R.string.dinnerMenuLine, m_pulseDish, m_paneerDish, m_paneerMealPrice)
                 + '\n' + res.getString(R.string.dinnerMenuLine, m_pulseDish,m_vegDish, m_vegMealPrice) + '\n' + res.getString(R.string.dinnerMenuEnd));
 
         m_dinnerDisplayLayout.addView(m_headlineText);

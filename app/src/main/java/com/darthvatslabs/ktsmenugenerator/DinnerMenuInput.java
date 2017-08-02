@@ -1,6 +1,7 @@
 package com.darthvatslabs.ktsmenugenerator;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ public class DinnerMenuInput extends AppCompatActivity {
     private EditText m_paneerMealPriceInput;
     private EditText m_vegMealPriceInput;
     private Button m_submitButton;
+    private Resources m_resources;
 
     private RelativeLayout.LayoutParams textV_Param;
     private RelativeLayout.LayoutParams m_pulseDish_Param;
@@ -43,8 +45,10 @@ public class DinnerMenuInput extends AppCompatActivity {
         m_headlineText = new TextView(this);
         m_headlineText.setId(R.id.headlineText); //Check importance of setting id value
 
+        m_resources = getResources();
+
         //set display and position Attributes for TextView
-        m_headlineText.setText(R.string.headlineInput);
+        m_headlineText.setText(m_resources.getString(R.string.headlineInput, m_resources.getString(R.string.dinner)));
         m_headlineText.setTextColor(Color.BLUE);
 
         textV_Param = new RelativeLayout.LayoutParams(

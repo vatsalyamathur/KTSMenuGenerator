@@ -1,16 +1,27 @@
 <resources>
     <string name="app_name">KTS MenuGenerator</string>
+    <string name="dinner">Dinner</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="greeting">Good %1$s</string>
+    <string name="morning">Morning</string>
+    <string name="evening">Evening</string>
     <string name="headline">KTS Menu Generator</string>
     <string name="dinnerButton">Dinner Menu</string>
     <string name="breakfastButton">Breakfast Menu</string>
-    <string name="headlineInput">Please Input Below Details</string>
+    <string name="headlineInput">Please Input Below Details for %1$s Menu</string>
     <string name="pulseEditText">Enter Pulse/Dal Dish Name</string>
     <string name="paneerEditText">Enter Paneer Dish Name</string>
     <string name="vegEditText">Enter Vegetable Dish Name</string>
     <string name="paneerMealPriceEditText">Enter Paneer Meal Price</string>
     <string name="vegMealPriceEditText">Enter Veg Meal Price</string>
+    <string name="breakfastEditText">Enter %1$s Dish</string>
+    <string name="breakfastPriceInput">Enter %1$s Price</string>
     <string name="submitButton">Generate Menu</string>
-    <string name="dinnerMenuHeadline">*Menu for %1$s Dinner*</string>
-    <string name="dinnerMenuLine">*%1$s + %2$s + Chapati + Rice + Salad @ %3$d/- per tiffin</string>
-    <string name="dinnerMenuEnd">**No Orders will be Entertained after 2:00 PM.\n** Any Cancellation after 4:00 PM, you have to pay 50% Price of Your Order*\n\nThanks\nKTS</string>
+    <string name="dinnerMenuHeadline">*Menu for %1$s %2$s*</string>
+    <string name="dinnerMenuLine">*%1$s + %2$s + Chapati + Rice + Salad @ %3$d/- per Tiffin.</string>
+    <string name="dinnerMenuEnd">**No Orders will be Entertained after 2:00 PM.\n
+        ** Any Cancellation after 4:00 PM, you have to pay 50% Price of Your Order*\n\n
+        Thanks\n
+        KTS
+    </string>
 </resources>

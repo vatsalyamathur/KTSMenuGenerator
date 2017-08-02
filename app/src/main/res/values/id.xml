@@ -9,4 +9,6 @@
     <item type="id" name="paneerMealPriceEditText"></item>
     <item type="id" name="vegMealPriceEditText"></item>
     <item type="id" name="submitButton"></item>
+    <item type="id" name="breakfastEditText"></item>
+    <item type="id" name="breakfastPriceInput"></item>
 </resources>
