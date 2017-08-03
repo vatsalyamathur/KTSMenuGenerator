@@ -130,7 +130,7 @@ public class DinnerMenuInput extends AppCompatActivity {
         m_submitButton.setId(R.id.submitButton);
 
         //set display and position for Button
-        m_submitButton.setHint(R.string.submitButton);
+        m_submitButton.setText(R.string.submitButton);
         m_submitButton_Param = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         m_submitButton_Param.addRule(RelativeLayout.BELOW, m_vegMealPriceInput.getId());

@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.darthvatslabs.util.utility;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,11 +29,7 @@ public class DinnerMenuDisplay extends AppCompatActivity {
     private int m_paneerMealPrice;
     private int m_vegMealPrice;
 
-    private Date m_currentDateTimeString;
-    private SimpleDateFormat m_currentDayString;
-    private String m_dayOfTheWeek;
-
-    Intent m_dinnerDisplayIntent;
+    private utility util;
 
     private void m_initWidgets()
     {
@@ -43,8 +41,6 @@ public class DinnerMenuDisplay extends AppCompatActivity {
         // get EditText data from Intent
         Bundle dinnerDisplayBundle = getIntent().getExtras();
 
-        m_currentDayString = new SimpleDateFormat("EEEE");
-
         m_dinnerDisplayLayout.setLayoutParams(
                 new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.MATCH_PARENT));
 
@@ -55,14 +51,13 @@ public class DinnerMenuDisplay extends AppCompatActivity {
         m_paneerMealPrice = dinnerDisplayBundle.getInt("paneerMealPrice", 0);
         m_vegMealPrice = dinnerDisplayBundle.getInt("vegMealPrice", 0);
 
-
-        m_currentDateTimeString = new Date();
-        m_dayOfTheWeek = m_currentDayString.format(m_currentDateTimeString);
+        String dayOfTheWeek = util.getCurrentDay();
 
         Resources res = getResources();
-        m_headlineText.setText(res.getString(R.string.dinnerMenuHeadline, m_dayOfTheWeek, res.getString(R.string.dinner)) + '\n'
+        m_headlineText.setText(res.getString(R.string.menuHeadline, dayOfTheWeek, res.getString(R.string.dinner)) + '\n'
                 + res.getString(R.string.dinnerMenuLine, m_pulseDish, m_paneerDish, m_paneerMealPrice)
-                + '\n' + res.getString(R.string.dinnerMenuLine, m_pulseDish,m_vegDish, m_vegMealPrice) + '\n' + res.getString(R.string.dinnerMenuEnd));
+                + '\n' + res.getString(R.string.dinnerMenuLine, m_pulseDish,m_vegDish, m_vegMealPrice) + '\n' + res.getString(R.string.dinnerMenuEnd)
+                + "\n\n" + res.getString(R.string.signature));
 
         m_dinnerDisplayLayout.addView(m_headlineText);
     }

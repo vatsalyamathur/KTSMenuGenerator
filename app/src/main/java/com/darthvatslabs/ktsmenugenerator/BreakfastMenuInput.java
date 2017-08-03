@@ -5,19 +5,15 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class BreakfastMenuInput extends AppCompatActivity {
     //Layout Objects
-    private RelativeLayout m_dinnerInputLayout;
+    private RelativeLayout m_breakfastInputLayout;
     private TextView m_headlineText;
     private EditText m_breakfastDishInput;
     private EditText m_breakfastPriceInput;
@@ -32,8 +28,8 @@ public class BreakfastMenuInput extends AppCompatActivity {
     private void m_initWidgets()
     {
         // init Layout
-        m_dinnerInputLayout = new RelativeLayout(this);
-        m_dinnerInputLayout.setLayoutParams(
+        m_breakfastInputLayout = new RelativeLayout(this);
+        m_breakfastInputLayout.setLayoutParams(
                 new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.MATCH_PARENT));
 
         // init TextView
@@ -101,23 +97,22 @@ public class BreakfastMenuInput extends AppCompatActivity {
                 Intent breakfastInputIntent = new Intent(getApplicationContext(), BreakfastMenuDisplay.class);
                 Bundle breakfastInputBundle = new Bundle();
                 breakfastInputBundle.putString("breakfastMenu", m_breakfastDishInput.getText().toString());
-                breakfastInputBundle.putString("breakfastPrice", m_breakfastPriceInput.getText().toString());
+                breakfastInputBundle.putInt("breakfastPrice", Integer.parseInt(m_breakfastPriceInput.getText().toString()));
                 breakfastInputIntent.putExtras(breakfastInputBundle);
                 startActivity(breakfastInputIntent);
             }
         });
         // add widget to Layout
-        m_dinnerInputLayout.addView(m_headlineText, textV_Param);
-        m_dinnerInputLayout.addView(m_breakfastDishInput, m_breakfastDish_Param);
-        m_dinnerInputLayout.addView(m_breakfastPriceInput, m_breakfastPrice_Param);
-        m_dinnerInputLayout.addView(m_submitButton, m_submitButton_Param);
+        m_breakfastInputLayout.addView(m_headlineText, textV_Param);
+        m_breakfastInputLayout.addView(m_breakfastDishInput, m_breakfastDish_Param);
+        m_breakfastInputLayout.addView(m_breakfastPriceInput, m_breakfastPrice_Param);
+        m_breakfastInputLayout.addView(m_submitButton, m_submitButton_Param);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.m_initWidgets();
-        setContentView(m_dinnerInputLayout);
-
+        setContentView(m_breakfastInputLayout);
     }
 }
