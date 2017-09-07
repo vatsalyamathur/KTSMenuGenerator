@@ -40,19 +40,12 @@ public class DinnerMenuDisplay extends AppCompatActivity {
 
         m_headlineText = new TextView(this);
 
-        // get EditText data from Intent
-        Bundle dinnerDisplayBundle = getIntent().getExtras();
-
         m_dinnerDisplayLayout.setLayoutParams(
                 new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.MATCH_PARENT));
+    }
 
-        m_pulseDish = dinnerDisplayBundle.getString("pulseDish");
-        m_paneerDish = dinnerDisplayBundle.getString("paneerDish");
-        m_vegDish = dinnerDisplayBundle.getString("vegDish");
-
-        m_paneerMealPrice = dinnerDisplayBundle.getInt("paneerMealPrice", 0);
-        m_vegMealPrice = dinnerDisplayBundle.getInt("vegMealPrice", 0);
-
+    private void m_styleWidgets()
+    {
         String dayOfTheWeek = utilObj.getCurrentDay();
 
         Resources res = getResources();
@@ -64,10 +57,25 @@ public class DinnerMenuDisplay extends AppCompatActivity {
         m_dinnerDisplayLayout.addView(m_headlineText);
     }
 
+    private void m_getBundleData()
+    {
+        // get EditText data from Intent
+        Bundle dinnerDisplayBundle = getIntent().getExtras();
+
+        m_pulseDish = dinnerDisplayBundle.getString("pulseDish");
+        m_paneerDish = dinnerDisplayBundle.getString("paneerDish");
+        m_vegDish = dinnerDisplayBundle.getString("vegDish");
+
+        m_paneerMealPrice = dinnerDisplayBundle.getInt("paneerMealPrice", 0);
+        m_vegMealPrice = dinnerDisplayBundle.getInt("vegMealPrice", 0);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         m_initWidgets();
+        m_getBundleData();
+        m_styleWidgets();
         setContentView(m_dinnerDisplayLayout);
     }
 }
