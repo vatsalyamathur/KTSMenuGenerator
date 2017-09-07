@@ -29,10 +29,12 @@ public class DinnerMenuDisplay extends AppCompatActivity {
     private int m_paneerMealPrice;
     private int m_vegMealPrice;
 
-    private utility util;
+    private utility utilObj;
 
     private void m_initWidgets()
     {
+        utilObj = new utility();
+
         //init Layout
         m_dinnerDisplayLayout = new RelativeLayout(this);
 
@@ -51,7 +53,7 @@ public class DinnerMenuDisplay extends AppCompatActivity {
         m_paneerMealPrice = dinnerDisplayBundle.getInt("paneerMealPrice", 0);
         m_vegMealPrice = dinnerDisplayBundle.getInt("vegMealPrice", 0);
 
-        String dayOfTheWeek = util.getCurrentDay();
+        String dayOfTheWeek = utilObj.getCurrentDay();
 
         Resources res = getResources();
         m_headlineText.setText(res.getString(R.string.menuHeadline, dayOfTheWeek, res.getString(R.string.dinner)) + '\n'
