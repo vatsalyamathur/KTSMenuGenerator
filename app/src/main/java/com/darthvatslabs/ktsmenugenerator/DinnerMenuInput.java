@@ -168,6 +168,5 @@ public class DinnerMenuInput extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.m_initWidgets();
         setContentView(m_dinnerInputLayout);
-
     }
 }

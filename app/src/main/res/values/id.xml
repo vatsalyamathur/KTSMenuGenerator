@@ -12,4 +12,5 @@
     <item type="id" name="breakfastEditText"></item>
     <item type="id" name="breakfastPriceInput"></item>
     <item type="id" name="menuDisplay"></item>
+    <item type="id" name="copyClipboard"></item>
 </resources>
