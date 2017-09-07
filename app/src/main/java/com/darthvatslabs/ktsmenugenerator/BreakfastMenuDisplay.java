@@ -33,16 +33,17 @@ public class BreakfastMenuDisplay extends AppCompatActivity {
     private void m_initWidgets()
     {
         m_breakfastMenuDisplayLayout = new RelativeLayout(this);
+        m_breakfastMenuDisplayLayout.setLayoutParams(
+                new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
 
         m_menuDisplayText = new TextView(this);
         m_menuDisplayText.setId(R.id.menuDisplay);
 
-        m_menuDisplayText_Param = new RelativeLayout.LayoutParams(
-                RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-
         m_copyClipboardButton = new Button(this);
         m_copyClipboardButton.setId(R.id.copyClipboard);
 
+        m_menuDisplayText_Param = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         m_clipboardButton_Param = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
@@ -51,9 +52,6 @@ public class BreakfastMenuDisplay extends AppCompatActivity {
 
     private void m_styleWidgets()
     {
-        m_breakfastMenuDisplayLayout.setLayoutParams(
-                new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
-
         String currentDayOfWeek = utilObj.getCurrentDay();
 
         Resources res = getResources();
